@@ -3,9 +3,11 @@ import requests
 import json
 
 BASE_URL = 'https://cloud-api.yandex.net/v1/disk/resources/'
+# токен Яндекса
+token = ''
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'OAuth y0_AgAAAAABnMNfAAq0uAAAAADv9DRBiy5mUYgHS5qp_p4rRHetJ5anXJI'
+  'Authorization': f'OAuth {token}'
             }
 def create_folder(path):
         params={'path': path}
@@ -79,8 +81,8 @@ class Test_yandex_api(unittest.TestCase):
 
 
     def tearDown(self) -> None:
-        if AssertionError:
-            print("number error", AssertionError.args)
+        # if AssertionError:
+        #     print("number error", AssertionError.args)
         # response = create_folder(path)
         # json_data = json.loads(response.content.decode('utf-8'))
         # if int(response.status_code) > 202:
